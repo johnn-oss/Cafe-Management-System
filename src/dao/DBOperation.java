@@ -21,8 +21,25 @@ public class DBOperation {
                 JOptionPane.showMessageDialog(null,message);
             
         }
-        catch(Exception e){
+        catch(HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(null,e,"Mesage",JOptionPane.ERROR_MESSAGE);
         }
-    } 
+    }
+    
+    public static ResultSet getData(String query) {
+        try{
+            Connection con = ConnectionProvider.getCon();
+            Statement smt = con.createStatement();
+            ResultSet rs = smt.executeQuery(query);
+            return rs;
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e,"Mesage",JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+        
+
+    }
 }
+
