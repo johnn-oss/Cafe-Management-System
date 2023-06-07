@@ -9,6 +9,7 @@ package model;
  * @author pc
  */
 public class User {
+    private String id;
     private String name;
     private String email;
     private String mobileNumber;
@@ -18,6 +19,14 @@ public class User {
     private String answer;
     private String status;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String Id) {
+        this.id = Id;
+    }
+    
     public String getName() {
         return name;
     }

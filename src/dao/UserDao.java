@@ -5,6 +5,7 @@
 package dao;
 import model.User;
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 
 
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
  * @author pc
  */
 public class UserDao {
+    private static Object rs;
     public static void save(User user) {
         String query = "insert into user(Id,Name,Email,MobileNumber,Address,Password,SecurityQuestion,Answer,Status) values ('"+user.getId()+"','"+user.getName()+"','"+user.getEmail()+"','"+user.getMobileNumber()+"','"+user.getAddress()+"','"+user.getPassword()+"','"+user.getAnswer()+"','"+user.getSecurityQuestion()+"','"+user.getStatus()+"','False')";
         DBOperation.setDataOrDelete(query,"Registered successfully! Wait for Admin approval.");

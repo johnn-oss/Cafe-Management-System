@@ -5,6 +5,7 @@
 package cafe.management.system;
 import javax.swing.JOptionPane;
 import model.User;
+import dao.UserDao;
 
 /**
  *
@@ -23,6 +24,7 @@ public class Signup extends javax.swing.JFrame {
     }
 
     public void clear() {
+        txtFieldId.setText("");
         txtFieldName.setText("");
         txtFieldEmail.setText("");
         txtFieldMobileNumber.setText("");
@@ -30,6 +32,7 @@ public class Signup extends javax.swing.JFrame {
         passwordFieldPassword.setText("");
         txtFieldSecurityQuestion.setText("");
         txtFieldAnswer.setText("");
+        btnSave.setEnabled(false);
         
     }
     /**
@@ -55,12 +58,14 @@ public class Signup extends javax.swing.JFrame {
         txtFieldAddress = new javax.swing.JTextField();
         txtFieldSecurityQuestion = new javax.swing.JTextField();
         txtFieldAnswer = new javax.swing.JTextField();
-        btnSave = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnForgotPassword = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         passwordFieldPassword = new javax.swing.JPasswordField();
+        txtFieldId = new javax.swing.JTextField();
+        id = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,7 +77,7 @@ public class Signup extends javax.swing.JFrame {
         Signup.setForeground(new java.awt.Color(255, 0, 0));
         Signup.setText("Signup");
         getContentPane().add(Signup);
-        Signup.setBounds(540, 200, 118, 48);
+        Signup.setBounds(540, 160, 118, 48);
 
         name.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         name.setText("Name");
@@ -148,6 +153,17 @@ public class Signup extends javax.swing.JFrame {
         getContentPane().add(txtFieldAnswer);
         txtFieldAnswer.setBounds(620, 500, 274, 26);
 
+        btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnClear);
+        btnClear.setBounds(720, 540, 89, 27);
+
         btnSave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         btnSave.setText("Save");
@@ -158,12 +174,6 @@ public class Signup extends javax.swing.JFrame {
         });
         getContentPane().add(btnSave);
         btnSave.setBounds(620, 540, 86, 27);
-
-        btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
-        btnClear.setText("Clear");
-        getContentPane().add(btnClear);
-        btnClear.setBounds(720, 540, 89, 27);
 
         btnExit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit small.png"))); // NOI18N
@@ -189,6 +199,13 @@ public class Signup extends javax.swing.JFrame {
         btnLogin.setBounds(810, 590, 91, 27);
         getContentPane().add(passwordFieldPassword);
         passwordFieldPassword.setBounds(620, 420, 274, 22);
+        getContentPane().add(txtFieldId);
+        txtFieldId.setBounds(620, 222, 280, 30);
+
+        id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        id.setText("Id");
+        getContentPane().add(id);
+        id.setBounds(460, 230, 13, 20);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/first page background.PNG"))); // NOI18N
         background.setText("Background");
@@ -212,26 +229,33 @@ public class Signup extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        int a = JOptonPane.showConfirmDialog(null, "Do you really want to save the details", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to save the details", "Select", JOptionPane.YES_NO_OPTION);
         User user = new User();
-        user.setName(name.getText());
-        user.setEmail(email.getText());
-        user.setMobileNumber(mobileNumber.getText());
-        user.setAddress(address.getText());
-        user.setPassword(password.getText());
-        user.setSecurityQuestion(securityQuestion.getText());
-        user.setAnswer(answer.getText());
-        user.setStatus(clear());
+        user.setId(txtFieldId.getText());
+        user.setName(txtFieldName.getText());
+        user.setEmail(txtFieldEmail.getText());
+        user.setMobileNumber(txtFieldMobileNumber.getText());
+        user.setAddress(txtFieldAddress.getText());
+        user.setPassword(passwordFieldPassword.getText());
+        user.setSecurityQuestion(txtFieldSecurityQuestion.getText());
+        user.setAnswer(txtFieldAnswer.getText());
+        UserDao.save(user);
+        clear();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-        int a = JOptonPane.showConfirmDialog(null, "Do you really want to exit", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to exit", "Select", JOptionPane.YES_NO_OPTION);
         
         if (a == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        clear();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,6 +303,7 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel email;
+    private javax.swing.JLabel id;
     private javax.swing.JLabel mobileNumber;
     private javax.swing.JLabel name;
     private javax.swing.JLabel password;
@@ -287,6 +312,7 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JTextField txtFieldAddress;
     private javax.swing.JTextField txtFieldAnswer;
     private javax.swing.JTextField txtFieldEmail;
+    private javax.swing.JTextField txtFieldId;
     private javax.swing.JTextField txtFieldMobileNumber;
     private javax.swing.JTextField txtFieldName;
     private javax.swing.JTextField txtFieldSecurityQuestion;

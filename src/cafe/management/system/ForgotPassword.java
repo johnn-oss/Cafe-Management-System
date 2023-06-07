@@ -26,21 +26,218 @@ public class ForgotPassword extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnLogout = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        btnChangePassword = new javax.swing.JButton();
+        btnSecurityQuestion = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        btnCategory = new javax.swing.JButton();
+        btnNewProduct = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        btnVerifyUser = new javax.swing.JButton();
+        forgotPassword = new javax.swing.JLabel();
+        changePassword = new javax.swing.JLabel();
+        oldSecurityQuestion = new javax.swing.JLabel();
+        newSecurityQuestion = new javax.swing.JLabel();
+        newAnswer = new javax.swing.JLabel();
+        password = new javax.swing.JLabel();
+        txtFieldOldSecurityQuestion = new javax.swing.JTextField();
+        txtNewSecurityQuestion = new javax.swing.JTextField();
+        txtFieldNewAnswer = new javax.swing.JTextField();
+        pwdFieldpassword = new javax.swing.JPasswordField();
+        btnUpdate = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
+        btnLogout.setText("Logout");
+
+        btnPlaceOrder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnPlaceOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/place order.png"))); // NOI18N
+        btnPlaceOrder.setText("Place Order");
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View Bills & Order Placed Details.png"))); // NOI18N
+        jButton1.setText("View Bills & Order Details");
+
+        btnChangePassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnChangePassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/change Password.png"))); // NOI18N
+        btnChangePassword.setText("Change Password");
+
+        btnSecurityQuestion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSecurityQuestion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/change Security Question.png"))); // NOI18N
+        btnSecurityQuestion.setText("Change Security Question");
+
+        btnExit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
+        btnExit.setText("Exit");
+
+        btnCategory.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
+        btnCategory.setText("Manage Category");
+
+        btnNewProduct.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnNewProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new product.png"))); // NOI18N
+        btnNewProduct.setText("New Product");
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view edit delete product.png"))); // NOI18N
+        jButton2.setText("View Edit & Delete Product");
+
+        btnVerifyUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVerifyUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verify users.png"))); // NOI18N
+        btnVerifyUser.setText("Verify User");
+
+        forgotPassword.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        forgotPassword.setForeground(new java.awt.Color(255, 0, 0));
+        forgotPassword.setText("Forgot Password");
+
+        changePassword.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        changePassword.setText("Change Security Question");
+
+        oldSecurityQuestion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        oldSecurityQuestion.setText("Old Security Question");
+
+        newSecurityQuestion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        newSecurityQuestion.setText("New Security Question");
+
+        newAnswer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        newAnswer.setText("New Answer");
+
+        password.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        password.setText("Password");
+
+        txtFieldOldSecurityQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldOldSecurityQuestionActionPerformed(evt);
+            }
+        });
+
+        txtFieldNewAnswer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFieldNewAnswerActionPerformed(evt);
+            }
+        });
+
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
+        btnUpdate.setText("Update");
+
+        btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
+        btnClear.setText("Clear");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btnLogout)
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnPlaceOrder)
+                                .addGap(33, 33, 33)
+                                .addComponent(jButton1)
+                                .addGap(41, 41, 41)
+                                .addComponent(btnChangePassword)
+                                .addGap(39, 39, 39)
+                                .addComponent(btnSecurityQuestion))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCategory)
+                                .addGap(64, 64, 64)
+                                .addComponent(btnNewProduct)
+                                .addGap(66, 66, 66)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnVerifyUser)))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(400, 400, 400)
+                        .addComponent(forgotPassword))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(292, 292, 292)
+                        .addComponent(changePassword))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(332, 332, 332)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(oldSecurityQuestion)
+                            .addComponent(newSecurityQuestion)
+                            .addComponent(newAnswer)
+                            .addComponent(password))
+                        .addGap(80, 80, 80)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnUpdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                                .addComponent(btnClear))
+                            .addComponent(txtFieldOldSecurityQuestion)
+                            .addComponent(txtNewSecurityQuestion)
+                            .addComponent(txtFieldNewAnswer)
+                            .addComponent(pwdFieldpassword))))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogout)
+                    .addComponent(btnPlaceOrder)
+                    .addComponent(jButton1)
+                    .addComponent(btnChangePassword)
+                    .addComponent(btnSecurityQuestion)
+                    .addComponent(btnExit))
+                .addGap(88, 88, 88)
+                .addComponent(forgotPassword)
+                .addGap(39, 39, 39)
+                .addComponent(changePassword)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(oldSecurityQuestion)
+                    .addComponent(txtFieldOldSecurityQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newSecurityQuestion)
+                    .addComponent(txtNewSecurityQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newAnswer)
+                    .addComponent(txtFieldNewAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(password)
+                    .addComponent(pwdFieldpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnClear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCategory)
+                    .addComponent(btnNewProduct)
+                    .addComponent(jButton2)
+                    .addComponent(btnVerifyUser))
+                .addGap(35, 35, 35))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtFieldOldSecurityQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldOldSecurityQuestionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldOldSecurityQuestionActionPerformed
+
+    private void txtFieldNewAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldNewAnswerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldNewAnswerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +275,27 @@ public class ForgotPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCategory;
+    private javax.swing.JButton btnChangePassword;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnNewProduct;
+    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnSecurityQuestion;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnVerifyUser;
+    private javax.swing.JLabel changePassword;
+    private javax.swing.JLabel forgotPassword;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel newAnswer;
+    private javax.swing.JLabel newSecurityQuestion;
+    private javax.swing.JLabel oldSecurityQuestion;
+    private javax.swing.JLabel password;
+    private javax.swing.JPasswordField pwdFieldpassword;
+    private javax.swing.JTextField txtFieldNewAnswer;
+    private javax.swing.JTextField txtFieldOldSecurityQuestion;
+    private javax.swing.JTextField txtNewSecurityQuestion;
     // End of variables declaration//GEN-END:variables
 }
