@@ -11,7 +11,7 @@ package cafe.management.system;
 public class Home extends javax.swing.JFrame {
 
     /**
-     * Creates new form Home
+     * Creates new form ForgotPassword
      */
     public Home() {
         initComponents();
@@ -26,18 +26,74 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnLogout = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        btnChangePassword = new javax.swing.JButton();
+        btnSecurityQuestion = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        btnCategory = new javax.swing.JButton();
+        btnNewProduct = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        btnVerifyUser = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
+        btnLogout.setText("Logout");
+        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 40, -1, -1));
+
+        btnPlaceOrder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnPlaceOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/place order.png"))); // NOI18N
+        btnPlaceOrder.setText("Place Order");
+        getContentPane().add(btnPlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View Bills & Order Placed Details.png"))); // NOI18N
+        jButton1.setText("View Bills & Order Details");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 40, -1, -1));
+
+        btnChangePassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnChangePassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/change Password.png"))); // NOI18N
+        btnChangePassword.setText("Change Password");
+        getContentPane().add(btnChangePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 40, -1, -1));
+
+        btnSecurityQuestion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSecurityQuestion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/change Security Question.png"))); // NOI18N
+        btnSecurityQuestion.setText("Change Security Question");
+        getContentPane().add(btnSecurityQuestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(845, 40, -1, -1));
+
+        btnExit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
+        btnExit.setText("Exit");
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1098, 40, -1, -1));
+
+        btnCategory.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
+        btnCategory.setText("Manage Category");
+        getContentPane().add(btnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 639, -1, -1));
+
+        btnNewProduct.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnNewProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new product.png"))); // NOI18N
+        btnNewProduct.setText("New Product");
+        getContentPane().add(btnNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 639, -1, -1));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view edit delete product.png"))); // NOI18N
+        jButton2.setText("View Edit & Delete Product");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 639, -1, -1));
+
+        btnVerifyUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVerifyUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verify users.png"))); // NOI18N
+        btnVerifyUser.setText("Verify User");
+        getContentPane().add(btnVerifyUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(942, 639, -1, -1));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home-background-image.png"))); // NOI18N
+        background.setText("backgroun");
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -68,6 +124,9 @@ public class Home extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -78,5 +137,16 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
+    private javax.swing.JButton btnCategory;
+    private javax.swing.JButton btnChangePassword;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnNewProduct;
+    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnSecurityQuestion;
+    private javax.swing.JButton btnVerifyUser;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }

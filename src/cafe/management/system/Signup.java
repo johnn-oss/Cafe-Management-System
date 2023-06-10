@@ -24,7 +24,7 @@ public class Signup extends javax.swing.JFrame {
     }
 
     public void clear() {
-        txtFieldId.setText("");
+        //txtFieldId.setText("");
         txtFieldName.setText("");
         txtFieldEmail.setText("");
         txtFieldMobileNumber.setText("");
@@ -34,6 +34,20 @@ public class Signup extends javax.swing.JFrame {
         txtFieldAnswer.setText("");
         btnSave.setEnabled(false);
         
+    }
+    public void validateFields() {
+        //String id = txtFieldId.getText();
+        String name = txtFieldName.getText();
+        String email = txtFieldEmail.getText();
+        String mobileNumber = txtFieldMobileNumber.getText();
+        String address = txtFieldAddress.getText();
+        String password = passwordFieldPassword.getText();
+        String securityQuestion = txtFieldSecurityQuestion.getText();
+        String answer = txtFieldAnswer.getText();
+        if(!name.equals("") && email.matches(emailPattern) && mobileNumber.matches(mobileNumberPattern) && mobileNumber.length() == 11 && !password.equals("") && !securityQuestion.equals("") && !answer.equals(""))
+            btnSave.setEnabled(true);
+        else
+            btnSave.setEnabled(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,8 +78,6 @@ public class Signup extends javax.swing.JFrame {
         btnForgotPassword = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         passwordFieldPassword = new javax.swing.JPasswordField();
-        txtFieldId = new javax.swing.JTextField();
-        id = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,18 +132,38 @@ public class Signup extends javax.swing.JFrame {
                 txtFieldNameActionPerformed(evt);
             }
         });
+        txtFieldName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFieldNameKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtFieldName);
         txtFieldName.setBounds(620, 260, 274, 26);
 
         txtFieldEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtFieldEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFieldEmailKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtFieldEmail);
         txtFieldEmail.setBounds(620, 290, 274, 26);
 
         txtFieldMobileNumber.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtFieldMobileNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFieldMobileNumberKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtFieldMobileNumber);
         txtFieldMobileNumber.setBounds(620, 330, 274, 26);
 
         txtFieldAddress.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtFieldAddress.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFieldAddressKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtFieldAddress);
         txtFieldAddress.setBounds(620, 370, 274, 26);
 
@@ -141,6 +173,11 @@ public class Signup extends javax.swing.JFrame {
                 txtFieldSecurityQuestionActionPerformed(evt);
             }
         });
+        txtFieldSecurityQuestion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFieldSecurityQuestionKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtFieldSecurityQuestion);
         txtFieldSecurityQuestion.setBounds(620, 460, 274, 26);
 
@@ -148,6 +185,11 @@ public class Signup extends javax.swing.JFrame {
         txtFieldAnswer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldAnswerActionPerformed(evt);
+            }
+        });
+        txtFieldAnswer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFieldAnswerKeyReleased(evt);
             }
         });
         getContentPane().add(txtFieldAnswer);
@@ -195,17 +237,21 @@ public class Signup extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnLogin);
         btnLogin.setBounds(810, 590, 91, 27);
+
+        passwordFieldPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                passwordFieldPasswordKeyReleased(evt);
+            }
+        });
         getContentPane().add(passwordFieldPassword);
         passwordFieldPassword.setBounds(620, 420, 274, 22);
-        getContentPane().add(txtFieldId);
-        txtFieldId.setBounds(620, 222, 280, 30);
-
-        id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        id.setText("Id");
-        getContentPane().add(id);
-        id.setBounds(460, 230, 13, 20);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/first page background.PNG"))); // NOI18N
         background.setText("Background");
@@ -231,7 +277,7 @@ public class Signup extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = JOptionPane.showConfirmDialog(null, "Do you really want to save the details", "Select", JOptionPane.YES_NO_OPTION);
         User user = new User();
-        user.setId(txtFieldId.getText());
+        //user.setId(txtFieldId.getText());
         user.setName(txtFieldName.getText());
         user.setEmail(txtFieldEmail.getText());
         user.setMobileNumber(txtFieldMobileNumber.getText());
@@ -256,6 +302,47 @@ public class Signup extends javax.swing.JFrame {
         // TODO add your handling code here:
         clear();
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFieldEmailKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtFieldEmailKeyReleased
+
+    private void txtFieldNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFieldNameKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtFieldNameKeyReleased
+
+    private void txtFieldMobileNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFieldMobileNumberKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtFieldMobileNumberKeyReleased
+
+    private void txtFieldAddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFieldAddressKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtFieldAddressKeyReleased
+
+    private void passwordFieldPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldPasswordKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_passwordFieldPasswordKeyReleased
+
+    private void txtFieldSecurityQuestionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFieldSecurityQuestionKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtFieldSecurityQuestionKeyReleased
+
+    private void txtFieldAnswerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFieldAnswerKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtFieldAnswerKeyReleased
 
     /**
      * @param args the command line arguments
@@ -303,7 +390,6 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel email;
-    private javax.swing.JLabel id;
     private javax.swing.JLabel mobileNumber;
     private javax.swing.JLabel name;
     private javax.swing.JLabel password;
@@ -312,7 +398,6 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JTextField txtFieldAddress;
     private javax.swing.JTextField txtFieldAnswer;
     private javax.swing.JTextField txtFieldEmail;
-    private javax.swing.JTextField txtFieldId;
     private javax.swing.JTextField txtFieldMobileNumber;
     private javax.swing.JTextField txtFieldName;
     private javax.swing.JTextField txtFieldSecurityQuestion;
